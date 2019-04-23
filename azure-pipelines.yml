@@ -17,7 +17,7 @@ stages:
         echo Hello, world !! 
         echo Replace me with your build steps
       displayName: 'Build'
-    - powershell: Write-Host "Run unit tests for your application."        
+    - powershell: Write-Host "Run unit tests for your application..."        
       displayName: 'Unit Testing'
     - task: PublishPipelineArtifact@0
       displayName: Publish Artifacts
