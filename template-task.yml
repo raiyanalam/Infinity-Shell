@@ -1,0 +1,13 @@
+- task: Bash@3
+  displayName: 'Bash Script'
+  continueOnError: false
+  condition: 'succeeded()'
+  enabled: true
+  timeoutInMinutes: 0
+  inputs:
+    targetType: inline
+    filePath: ''
+    arguments: ''
+    script: echo If you see this, tasks are working.
+    failOnStderr: 'false'
+    workingDirectory: ''
