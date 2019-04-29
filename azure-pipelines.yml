@@ -34,6 +34,18 @@ stages:
       runOnce:
         deploy:
           steps:
+          - template: template-task.yml
+          
+ - stage: Deploy2
+  displayName: Deploy stage2
+  jobs:
+  - deployment: deploy2
+    displayName: Deploy job
+    environment: 'myFirstEnvironment'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
           - script: dir $(Pipeline.Workspace)
             displayName: List Artifact Contents
           - powershell: Write-Host "run your deployment steps"
