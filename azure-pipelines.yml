@@ -24,16 +24,11 @@ stages:
       inputs:
         artifactName: drop
         targetPath: '$(Build.SourcesDirectory)'
-- stage: Deploy
-  displayName: Deploy stage
+- stage: build2
   jobs:
-  - deployment: deploy
-    displayName: Deploy job
-    environment: 'myFirstEnvironment'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - template: template-task.yml
+  - job: Build2
+    displayName: Deploy job    
+    steps:
+    - template: template-task.yml
 
 
