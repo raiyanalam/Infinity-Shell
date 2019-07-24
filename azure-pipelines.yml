@@ -26,9 +26,15 @@ stages:
         targetPath: '$(Build.SourcesDirectory)'
 - stage: build2
   jobs:
-  - job: Build2
-    displayName: Deploy job    
-    steps:
-    - template: template-task.yml
+  - deployment: DeployJob
+    displayName: Deploy Job2
+    pool:
+      vmImage: Ubuntu-16.04
+    environment: staging
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo Hello
 
 
