@@ -13,7 +13,7 @@ stages:
     displayName: Build job
     steps:
     - script: | 
-        echo Hello, world !! 
+        echo Hello, world !!! 
         echo Replace me with your build steps !!
       displayName: 'Build'
     - powershell: Write-Host "Run unit tests for your application..."        
