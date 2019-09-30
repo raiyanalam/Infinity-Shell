@@ -7,11 +7,11 @@
 trigger:
 - master
 stages:
-- stage: Build
-  displayName: BuildStage
+- stage: BuildStage
+  displayName: BuildStageDN
   jobs:  
-  - job: BuildJob
-    displayName: BuildJob
+  - job: BuildJob1
+    displayName: BuildJob1DN
     steps:
     - script: | 
         echo Hello, world !! 
@@ -24,11 +24,16 @@ stages:
       inputs:
         artifactName: drop
         targetPath: '$(Build.SourcesDirectory)'
+  - job: BuildJob2
+    displayName: BuildJob2DN
+    steps:
+    - script: |
+      echo Hello, world !! 
 - stage: DeployStage
-  displayName: DeployStage
+  displayName: DeployStageDN
   jobs:
   - deployment: DeployJob
-    displayName: DeployJob
+    displayName: DeployJobDN
     pool:
       vmImage: Ubuntu-16.04
     environment: staging
