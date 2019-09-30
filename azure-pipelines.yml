@@ -23,12 +23,13 @@ stages:
       displayName: Publish Artifacts
       inputs:
         artifactName: drop
-        targetPath: '$(Build.SourcesDirectory)'
-  - job: BuildJob2
+        targetPath: '$(Build.SourcesDirectory)'  
+  - job: BuildJob12
     displayName: BuildJob2DN
     steps:
-    - script: |
-      echo Hello, world !! 
+    - script: | 
+        echo Hello, world2 !!         
+      displayName: 'Build task2'
 - stage: DeployStage
   displayName: DeployStageDN
   jobs:
@@ -42,5 +43,4 @@ stages:
         deploy:
           steps:
           - script: echo Hello
-
 
