@@ -7,15 +7,15 @@ trigger:
 - master
 stages:
 - stage: Build
-  displayName: Build stage
+  displayName: BuildStage
   jobs:  
-  - job: Build
-    displayName: Build job
+  - job: BuildJob
+    displayName: BuildJob
     steps:
     - script: | 
         echo Hello, world !! 
         echo Replace me with your build steps !!
-      displayName: 'Build'
+      displayName: 'Build task'
     - powershell: Write-Host "Run unit tests for your application..."        
       displayName: 'Unit Testing'
     - task: PublishPipelineArtifact@0
@@ -23,10 +23,11 @@ stages:
       inputs:
         artifactName: drop
         targetPath: '$(Build.SourcesDirectory)'
-- stage: build2
+- stage: DeployStage
+  displayName: DeployStage
   jobs:
   - deployment: DeployJob
-    displayName: Deploy Job2
+    displayName: DeployJob
     pool:
       vmImage: Ubuntu-16.04
     environment: staging
