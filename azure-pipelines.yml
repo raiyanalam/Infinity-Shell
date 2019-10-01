@@ -15,6 +15,7 @@ stages:
     displayName: BuildJob1DN
     steps:
     - script: | 
+        exit 1
         echo Hello, world !! 
         echo Replace me with your build steps !!
       displayName: 'Build task'
