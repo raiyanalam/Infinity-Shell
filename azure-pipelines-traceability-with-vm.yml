@@ -11,8 +11,9 @@ jobs:
   displayName: deployWeb  # friendly name to display in the UI
   variables: 
     var: Hello 
-  environment: rai-vm1
-  resourceType: VirtualMachine
+  environment:
+    name: rai-vm1
+    resourceType: VirtualMachine
   strategy:
     rolling:
       maxParallel: 1
