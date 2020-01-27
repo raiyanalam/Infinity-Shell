@@ -3,7 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-
 trigger:
 - master
 
@@ -19,3 +18,6 @@ jobs:
       preDeploy:        
         steps:
         - script: echo preDeploy $(var)
+      deploy:          
+        steps:
+        - script: echo deploy $(var)
