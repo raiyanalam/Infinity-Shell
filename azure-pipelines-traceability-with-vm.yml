@@ -12,6 +12,7 @@ jobs:
   variables: 
     var: Hello 
   environment: rai-vm1
+  resourceType: VirtualMachine
   strategy:
     rolling:
       maxParallel: 1
