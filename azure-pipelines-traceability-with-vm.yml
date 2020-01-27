@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+
+trigger:
+- master
+
+jobs:
+- deployment: deploy   # name of the deployment job (A-Z, a-z, 0-9, and underscore)
+  displayName: deployWeb  # friendly name to display in the UI
+  variables: 
+    var: Hello 
+  environment: rai-vm1
+  strategy:
+    rolling:
+      maxParallel: 1
+      preDeploy:        
+        steps:
+        - script: echo preDeploy $(var)
