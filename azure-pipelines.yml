@@ -20,4 +20,16 @@ stages:
       timeoutInMinutes: 2
       inputs:
         delayForMinutes: '3'
-
+  - job: job2    
+    displayName: job2
+    dependsOn: delayJob
+    steps:
+      - script: echo hellowrold!
+- stage: QAStage
+  displayName: QAStage
+  dependsOn: BuildStage
+  jobs:  
+  - job: jobinqa    
+    displayName: jobinqa
+    steps:
+      - script: echo hellowrold-QA!
