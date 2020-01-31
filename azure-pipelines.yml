@@ -9,40 +9,15 @@ trigger:
 - master
 stages:
 - stage: BuildStage
-  displayName: BuildStageDN
+  displayName: BuildStage
   jobs:  
-  - job: BuildJob1
-    displayName: BuildJob1DN
+  - job: delayJob
+    pool: server
+    displayName: delayJob
+    timeoutInMinutes: 7
     steps:
-    - script: | 
-        exit 1
-        echo Hello, world !! 
-        echo Replace me with your build steps !!
-      displayName: 'Build task'
-    - powershell: Write-Host "Run unit tests for your application..."        
-      displayName: 'Unit Testing'
-    - task: PublishPipelineArtifact@0
-      displayName: Publish Artifacts
+    - task: Delay@1
+      timeoutInMinutes: 2
       inputs:
-        artifactName: drop
-        targetPath: '$(Build.SourcesDirectory)'  
-  - job: BuildJob12
-    displayName: BuildJob2DN
-    steps:
-    - script: | 
-        echo Hello, world2 !!         
-      displayName: 'Build task2'
-- stage: DeployStage
-  displayName: DeployStageDN
-  jobs:
-  - deployment: DeployJob
-    displayName: DeployJobDN
-    pool:
-      vmImage: Ubuntu-16.04
-    environment: staging
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: echo Hello
+        delayForMinutes: '5'
 
