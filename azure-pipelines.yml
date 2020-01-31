@@ -14,7 +14,7 @@ stages:
   - job: delayJob
     pool: server
     displayName: delayJob
-    timeoutInMinutes: 4
+    timeoutInMinutes: 1
     steps:
     - task: Delay@1
       timeoutInMinutes: 2
