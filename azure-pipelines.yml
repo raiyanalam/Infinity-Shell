@@ -14,11 +14,11 @@ stages:
   - job: delayJob
     pool: server
     displayName: delayJob
-    timeoutInMinutes: 4320
+    timeoutInMinutes: 0
     steps:
     - task: Delay@1      
       inputs:
-        delayForMinutes: '4318'
+        delayForMinutes: '4318'      
   - job: job2    
     displayName: job2
     dependsOn: delayJob
