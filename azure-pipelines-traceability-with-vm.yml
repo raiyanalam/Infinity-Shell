@@ -4,7 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+    - master    
+  paths:
+    exclude:
+    - ./azure-pipelines.yml
 
 jobs:
 - deployment: deploy   # name of the deployment job (A-Z, a-z, 0-9, and underscore)
