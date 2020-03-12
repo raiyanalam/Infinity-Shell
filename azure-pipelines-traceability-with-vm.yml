@@ -12,6 +12,12 @@ trigger:
     - ./azure-pipelines.yml
 
 jobs:
+- job: delayjob
+  pool: server
+  steps:
+  - task: Delay@1
+    inputs:
+      delayForMinutes: '75'
 - deployment: deploy   # name of the deployment job (A-Z, a-z, 0-9, and underscore)
   displayName: deployWeb  # friendly name to display in the UI
   variables: 
