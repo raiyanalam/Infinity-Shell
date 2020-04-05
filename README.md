@@ -1,4 +1,2 @@
 # Infinity-Shell
-adding data
-adding data2
-adding data2
+ALL THE BEST FOR THE HACKATHON!!
