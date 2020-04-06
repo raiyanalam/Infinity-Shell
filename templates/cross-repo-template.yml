@@ -1,0 +1,8 @@
+jobs:
+- job: Build
+  steps:
+  - script: echo "npm install"
+
+- job: Test
+  steps:
+  - script: echo "npm build"
