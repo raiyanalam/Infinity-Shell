@@ -14,10 +14,10 @@ stages:
   - job: mvjob     
     pool: server
     displayName: mvJob
-    timeoutInMinutes: 100
+    timeoutInMinutes: 1
     steps:   
     - task: ManualValidation@0
-      timeoutInMinutes: 1
+      timeoutInMinutes: 10
       inputs:
         notifyUsers: 'moala@microsoft.com'
         instructions: 'check the configuration'
