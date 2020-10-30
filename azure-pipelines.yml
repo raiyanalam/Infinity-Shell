@@ -26,13 +26,13 @@ stages:
   - job: delayJob
     pool: server
     displayName: delayJob
-    timeoutInMinutes: 1
+    timeoutInMinutes: 100
     steps:   
     - task: ManualValidation@0
       inputs:
         notifyUsers: 'moala@microsoft.com'
         instructions: 'check the configuration'
-        onTimeout: 'resume'
+        onTimeout: 'reject'
     - task: Delay@1      
       inputs:
         delayForMinutes: '4318'      
